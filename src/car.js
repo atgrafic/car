@@ -54,6 +54,8 @@ function nextPage(e, id) {
             <p class="car-description">${jsonList[i].description}</p>
             </div>
             `;
+            localStorage.setItem("carName", JSON.stringify(jsonList[i].name));
+            localStorage.setItem("carPrice", JSON.stringify(jsonList[i].price));
         }
     }
     localStorage.setItem("carID", JSON.stringify(carID));
@@ -67,7 +69,7 @@ carNameClick();
 function get() {
     let carID = JSON.parse(localStorage.getItem("carID"));
 
-    //console.log("localstorge:", carID);
+    // console.log("localstorge:", carID);
     document.getElementById("carSelected").innerHTML = carID;
 }
 get();
@@ -83,33 +85,16 @@ document.getElementById("back").addEventListener("click", goBack);
 
 const formName = document.getElementById("car-buy");
 const nextFormURL = "form.html";
-const carNameForm = document.getElementById("carSelected");
-const carFormOne = document.getElementsByClassName("car-name");
 
 formName.addEventListener("click", () => pageForm());
 
 function pageForm() {
-    //  let carForm = "";
-    //  for (let i = 0; i < carFormOne.length; i++) {
-
-    //    if (carFormOne=== jsonList[i].name) {
     let carForm = `<p>Wybrany samochód:</p>
-        <h2 class="car-name">${jsonList.name}</h2>
+        <p class="car-name-orange">${JSON.parse(localStorage.getItem("carName"))}</p>
         <p>Cena samochodu:</p>
-        <button class="car-price">${jsonList.price}</button>`;
-    // }
-    //  }
-    localStorage.setItem("carForm", JSON.stringify(carForm));
-    //location.href = nextFormURL;
-    console.log(carNameForm);
-    console.log(carFormOne);
+        <p class="car-price-orange">${JSON.parse(localStorage.getItem("carPrice"))}</p>`;
+
+    localStorage.setItem("carForm", carForm);
+    location.href = nextFormURL;
     console.log(carForm);
 }
-
-function getForm() {
-    let carForm = JSON.parse(localStorage.getItem("carForm"));
-
-    console.log("localstorge:", carForm);
-    document.getElementById("form_car").innerHTML = carForm;
-}
-getForm();
