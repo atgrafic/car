@@ -35,6 +35,17 @@ $font_basic: "Roboto", sans-serif;
     border: $border_secend_color;
     outline: none;
 }
+@mixin button-orange-white{
+    font-family: $font_title;
+    font-size: 1.6em;
+    font-weight: 700;
+    width: 200px;
+    padding: 0.25em;
+    color: $color_white;
+    background-color: $color_secend;
+    border: $border_secend_color;
+    outline: none;
+}
 @mixin img_car_list {
     width: 350px;
     height: auto;
@@ -79,6 +90,10 @@ h2 {
     font-weight: 500;
     padding: 0.5em 0;
     margin: 0 0 0 15px;
+    .description{
+        padding: 0;
+        margin: 0;
+    }
 }
 .carSearch {
     margin: 0 auto;
@@ -87,15 +102,16 @@ h2 {
     box-shadow: 0px 5px 15px $color_third;
     width: 80%;
 }
-.placeholder {
+.placeholder, .car-name-chosse {
     @include font_H2_span;
     font-family: $font_title;
     font-weight: 900;
 }
 
-.car-price {
+.car-price, #car-buy {
     @include button;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .car-photo {
     @include img_car_list;
@@ -130,4 +146,61 @@ hr {
 }
 #back{
     cursor: pointer;
+    margin-top: 60px;
+}
+.car-price-1{
+    @include button-orange-white;
+    margin-bottom: 20px;
+}
+.description {
+    @include font_H2_span;
+    font-family: $font_basic;
+    font-weight: 500;
+    padding: 0.5em 0;
+    margin: 0;
+}
+.car-brand, .car-year, .car-km{
+    color: $color_secend;
+    margin-left: 5px;
+}
+.car-details{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.car-details div{
+    display: flex;
+
+}
+.car-photo_1{
+    width: 900px;
+    height: auto;
+}
+
+.all_car_photo div:nth-child(2){
+    display: flex;
+    max-width:600px ;
+    justify-content: space-between;
+    margin-top: 30px;
+    img{
+    width: 170px;
+    height: auto;
+    }
+}
+#content{
+    display: flex;
+
+}
+.ditels{
+    margin-left: 30px;
+    position: relative;;
+}
+.car-name-chosse {
+margin: 30px 0;
+}
+
+#car-buy{
+position: absolute;
+top: 625px;
 }
