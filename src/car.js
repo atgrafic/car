@@ -1,8 +1,9 @@
 import style from "./css/index.scss";
 
+
 //alert("Hello! I am an alert box!!");
 const json = require("./json/list.json");
-const jsonList = json.carsData;
+const brandList = json.carsData;
 const carName = document.getElementsByClassName("car");
 const nextURL = "car.html";
 
@@ -14,36 +15,37 @@ function carNameClick() {
     }
 }
 
-function nextPage(e, id) {
+//
+ function nextPage(e, id) {
     let carID = "";
     for (let i = 0; i < carName.length; i++) {
-        if (id === jsonList[i].id) {
-            carID += `<h2 class="car-name-chosse">${jsonList[i].name}</h2>
+        if (id === brandList[i].id) {
+            carID += `<h2 class="car-name-chosse">${brandList[i].name}</h2>
              <div id="content">
             <div class="all_car_photo">
                        <div>
-            <img class="car-photo_1" src="${jsonList[i].image[0]}">
+            <img class="car-photo_1" src="${brandList[i].image[0]}">
             </div>
             <div>
-            <img class="car-photo_2" src="${jsonList[i].image[1]}">
-            <img class="car-photo_3" src="${jsonList[i].image[2]}">
-            <img class="car-photo_4" src="${jsonList[i].image[3]}">
+            <img class="car-photo_2" src="${brandList[i].image[1]}">
+            <img class="car-photo_3" src="${brandList[i].image[2]}">
+            <img class="car-photo_4" src="${brandList[i].image[3]}">
             </div>
             </div>
             <div class="ditels">
-            <button class="car-price-1">${jsonList[i].price}</button>
+            <button class="car-price-1">${brandList[i].price}</button>
             <div class="car-details">
             <div>
             <p> Marka:</p>
-            <p class="car-brand"> ${jsonList[i].brand}</p>
+            <p class="car-brand"> ${brandList[i].brand}</p>
             </div>
             <div>
             <p>Rocznik:</p>
-            <p class="car-year">${jsonList[i].year}</p>
+            <p class="car-year">${brandList[i].year}</p>
             </div>
             <div>
             <p>Przebieg:</p>
-            <p class="car-km">${jsonList[i].km}</p>
+            <p class="car-km">${brandList[i].km}</p>
             </div>
             </div>
             <button id="car-buy">kup</button>
@@ -51,11 +53,11 @@ function nextPage(e, id) {
             </div>
             <div>
             <h2 class="description">Opis</h2>
-            <p class="car-description">${jsonList[i].description}</p>
+            <p class="car-description">${brandList[i].description}</p>
             </div>
             `;
-            localStorage.setItem("carName", JSON.stringify(jsonList[i].name));
-            localStorage.setItem("carPrice", JSON.stringify(jsonList[i].price));
+            localStorage.setItem("carName", JSON.stringify(brandList[i].name));
+            localStorage.setItem("carPrice", JSON.stringify(brandList[i].price));
         }
     }
     localStorage.setItem("carID", JSON.stringify(carID));
@@ -75,11 +77,12 @@ function get() {
 get();
 
 //powrot
-function goBack() {
+ function goBack() {
     window.history.go(-1);
 }
 
 document.getElementById("back").addEventListener("click", goBack);
+
 
 //przejście do formularza
 

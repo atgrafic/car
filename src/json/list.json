@@ -256,6 +256,21 @@
 },
 {
     "id":"20",
+    "name": "Mazda 6",
+    "brand": "Mazda",
+    "year": 2017,
+    "km": "44 529 km",
+    "price": "75 000 PLN",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales diam magna, in elementum sem tristique nec. Nulla blandit eleifend laoreet. Donec a pulvinar metus. Vivamus placerat scelerisque quam, in condimentum ligula bibendum et. Nulla volutpat risus in ex finibus consequat. Morbi condimentum blandit hendrerit. Etiam et viverra lorem. Aenean posuere arcu quis erat placerat placerat eu id augue.",
+    "image": [
+        "image/Mazda_6_1.jpg",
+        "image/Mazda_6_2.jpg",
+        "image/Mazda_6_3.jpg",
+        "image/Mazda_6_4.jpg"
+    ]
+},
+{
+    "id":"21",
     "name": "Audi Q5",
     "brand": "Audi",
     "year": 2011,
