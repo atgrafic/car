@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    entry: { index: "./src/index.js", car: "./src/car.js", form: "./src/form.js"  },
+    entry: { index: "./src/index.js", car: "./src/car.js", form: "./src/form.js", header:"./src/header.js"  },
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].[contenthash].bundle.js",
@@ -32,6 +32,12 @@ module.exports = {
             inject: true,
             chunks: ["form"],
             filename: "form.html",
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/header.html",
+            inject: true,
+            chunks: ["header"],
+            filename: "header.html",
         }),
         new CopyPlugin([{ from: "src/assets/image", to: "./image" }]),
     ],

@@ -10,6 +10,8 @@ $border_main: 1px solid #e6e4e4;
 $font_title: "Merriweather", serif;
 $font_basic: "Roboto", sans-serif;
 
+$width:1200px;
+
 @mixin font_description {
     font-family: $font_basic;
     font-size: 1em;
@@ -74,7 +76,7 @@ $font_basic: "Roboto", sans-serif;
 
 body {
     margin: 0 auto;
-    max-width: 1200px;
+    //max-width: 1200px;
 }
 #brand {
     @include input;
@@ -96,11 +98,13 @@ h2 {
     }
 }
 .carSearch {
+    max-width: $width;
     margin: 0 auto;
     text-align: center;
     display: block;
+    background: $color_white;
     box-shadow: 0px 5px 15px $color_third;
-    width: 80%;
+    width: 75%;
 }
 .placeholder, .car-name-chosse {
     @include font_H2_span;
@@ -117,6 +121,8 @@ h2 {
     @include img_car_list;
 }
 #carsList {
+    max-width: $width;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -208,3 +214,4 @@ top: 625px;
   color: #ff8a00;
 
 }
+//header

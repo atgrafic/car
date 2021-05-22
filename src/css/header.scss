@@ -1,0 +1,61 @@
+@import'index.scss';
+
+@mixin link{
+    color: $color_descripttion;
+    text-decoration: none;
+
+}
+body{
+    background-color: yellowgreen;
+}
+#topNav{
+    background: $color_white;
+    box-shadow: 0px 5px 15px $color_third;
+}
+.topNavMargin{
+    padding: 20px 0 15px 0;
+    max-width: $width;
+    margin: 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    width:75%;
+}
+.logo{
+    width: 90px;
+    height: auto;
+}
+
+.nav_item{
+    @include font_description;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+
+   a{
+       @include link;
+       padding-left: 25px;
+
+   }
+   a:hover, :active{
+             color: $color_secend;
+       }
+}
+
+ //.nav_item{
+//
+//     list-style-type: none;
+//     float:right;
+//         li{
+//             display: inline-block;
+
+//         }
+//         a{
+//         @include link;
+
+//     }
+//     a:hover, :active{
+//         color: $color_secend;
+//     }
+// }
