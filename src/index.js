@@ -4,7 +4,7 @@ import normalize from "./css/normalize.scss";
 import style from "./css/index.scss";
 
 import header_html from "./header.html";
-import header from "./header.js";
+i//mport header from "./header.js";
 import header_style from "./css/header.scss";
 
 import car from "./carData.js";
@@ -15,3 +15,13 @@ import car_js from "./car.js";
 
 import form_html from "./form.html";
 import form from "./form.js";
+
+//dadanie menud wszsykich stron
+// const menu = document.getElementsById('nav');
+// function navOnPage()
+// {
+
+//  menu.load("header.html")
+// }
+
+// navOnPage()
